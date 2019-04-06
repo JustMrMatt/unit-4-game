@@ -1,0 +1,14 @@
+body {
+    font-family: 'Supermercado One', cursive;
+    color: red;
+    background-image: url(../images/deadpool-hd-wallpapers-32964-1767535.jpg);
+}
+
+.top-header {
+    font-size: 300%;
+    text-align: center;
+}
+.section-title { 
+    font-size: 200%
+}
+
