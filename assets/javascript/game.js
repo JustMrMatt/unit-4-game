@@ -30,4 +30,23 @@ $(document).ready(function() {
         }
     };
     console.log(characters);
+
+var renderOne = function(character, renderArea) {
+    var charDiv = $("div class='character' data-name='" + character.name + " '>");
+    var charName = $("<div class='character-name'>").text(character.name);
+    var charImage = $("<img alt='image' class='character-image'>").attr("src", character.imageUrl);
+    charDiv.append(charName).append(charImage).append(charHealth);
+    $(renderArea).append(charDiv);
+}
+
+    var renderCharacters = function(charObj, areaRender) {
+        if (areaRender === "#characters-section") {
+            $(areaRender).empty();
+            for(var key in charObj) {
+                if(charObj.hasOwnProperty(key)) {
+                    renderOne(charObj[key], areaRender);
+                }
+            }
+        }
+    }
 });
