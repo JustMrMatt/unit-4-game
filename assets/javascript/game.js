@@ -2,17 +2,17 @@ $(document).ready(function() {
     var characters = {
         "Deadpool": {
             name: "Deadpool",
-            health: 120,
-            attack: 8,
+            health: 100,
+            attack: 14,
             imageUrl: "assets/images/sleepy.jpg",
-            enemyAttackBack: 15
+            enemyAttackBack: 5
         },
         "Wolverine": {
             name: "Wolverine",
-            health: 100,
-            attack: 14,
+            health: 120,
+            attack: 8,
             imageUrl: "assets/images/wolverine.jpg",
-            enemyAttackBack: 5
+            enemyAttackBack: 15
         },
         "Colossus": {
             name: "Colossus",
