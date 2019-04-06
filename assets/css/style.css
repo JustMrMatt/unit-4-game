@@ -4,6 +4,12 @@ body {
     background-image: url(../images/deadpool-hd-wallpapers-32964-1767535.jpg);
 }
 
+img {
+    height: 200px;
+    width: 150px;
+    border-radius: 10px;
+}
+
 .top-header {
     font-size: 300%;
     text-align: center;
@@ -12,3 +18,25 @@ body {
     font-size: 200%
 }
 
+.character {
+    display: inline-block;
+    border-style: solid;
+    border-color: red;
+    border-width: 3px;
+    cursor: pointer;
+    background-color: black;
+}
+
+.character-image {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.character-name {
+    text-align: center;
+}
+.character-health {
+    text-align: center;
+}
