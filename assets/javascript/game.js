@@ -117,7 +117,18 @@ $(document).ready(function() {
             var gameStateMessage = "You have defeated " + charObj.name + ", you can choose to fight another Champion!"
             renderMessage(gameStateMessage);
         }
-    }
+    };
+
+    var restartGame = function(inputEndGame) {
+        var restart = $("<button>Restart</button>").click(function() {
+            location.reload();
+        });
+
+        var gameState = $("<div>").text(inputEndGame);
+
+        $("body").append(gameState);
+        $("body").append(restart);
+    };
 
     renderCharacters(characters, "#character-section");
 
@@ -138,7 +149,7 @@ $(document).ready(function() {
         }
     })
 
-    $("attack-button").on("click", function() {
+    $("#attack-button").on("click", function() {
         if ($("#defender").children().length !== 0) {
             var attackMessage = "You attacked " + currDefender.name + " for " + (currCharacterSelected.attack * turnCounter) + " damage.";
             var counterAttackMessage = currDefender.name + " attacked you back for " + currDefender.enemyAttackBack + " damage.";
@@ -150,14 +161,20 @@ $(document).ready(function() {
                 renderMessage(counterAttackMessage);
                 currCharacterSelected.health -= currDefender.enemyAttackBack;
                 renderCharacters(currCharacterSelected, "enemyDamage");
+
+                if (currCharacterSelected.health <= 0) {
+                    renderMessage("clearMessage");
+                    restartGame("You have been Defeated!");
+                    $("#attack-button").unbind("click");
+                }
             }
-        }
-
-        else {
-            renderCharacters(currDefender, "enemyDefeated");
-            killCount++;
-            if (killCount >=3) {
-
+            else {
+                renderCharacters(currDefender, "enemyDefeated");
+                killCount++;
+                if (killCount >=3) {
+                    renderMessage("clearMessage");
+                    restartGame("You Won!!! You Are Champion of the Arena!");
+                }
             }
         }
         turnCounter++;
