@@ -120,7 +120,7 @@ $(document).ready(function() {
     };
 
     var restartGame = function(inputEndGame) {
-        var restart = $("<button>Restart</button>").click(function() {
+        var restart = $("<center><button>Restart</button></center>").click(function() {
             location.reload();
         });
 
@@ -173,7 +173,8 @@ $(document).ready(function() {
                 killCount++;
                 if (killCount >=3) {
                     renderMessage("clearMessage");
-                    restartGame("You Won!!! You Are Champion of the Arena!");
+                    restartGame();
+                    alert("You Won!!! You Are Champion of the Arena!");
                 }
             }
         }

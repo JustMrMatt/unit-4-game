@@ -2,20 +2,24 @@ body {
     font-family: 'Supermercado One', cursive;
     color: red;
     background-image: url(../images/deadpool-hd-wallpapers-32964-1767535.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 img {
-    height: 150px;
-    width: 112.5px;
+    height: 112.5px;
+    width: 84.375px;
     border-radius: 10px;
+    align-content: center;
 }
 
 .top-header {
-    font-size: 300%;
+    font-size: 400%;
     text-align: center;
 }
 .section-title { 
-    font-size: 200%
+    font-size: 200%;
+    text-align: center;
 }
 
 .character {
@@ -25,6 +29,7 @@ img {
     border-width: 3px;
     cursor: pointer;
     background-color: black;
+    text-align: center;
 }
 
 .character-image {
@@ -32,11 +37,48 @@ img {
     padding-left: 15px;
     margin-top: 3px;
     margin-bottom: 3px;
+    text-align: center;
 }
 
 .character-name {
     text-align: center;
 }
 .character-health {
+    text-align: center;
+}
+
+#character-section {
+    align-content: center;
+    text-align: center;
+}
+
+#selected-character-section {
+    align-content: center;
+    text-align: center;
+}
+
+#available-to-attack-section {
+    align-content: center;
+    text-align: center;
+}
+
+#fight-section {
+    align-content: center;
+    text-align: center;
+}
+
+#action {
+    align-content: center;
+    text-align: center;
+}
+
+#game-message {
+    align-content: center;
+    text-align: center;
+    font-size: 100%;
+}
+
+#selected-character {
+    align-content: center;
     text-align: center;
 }
