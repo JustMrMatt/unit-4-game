@@ -29,7 +29,9 @@ $(document).ready(function() {
             enemyAttackBack: 25
         }
     };
-    console.log(characters);
+
+var currCharacterSelected
+var combatants = [];
 
 var renderOne = function(character, renderArea) {
     var charDiv = $("<div class='character' data-name='" + character.name + "'>");
@@ -49,7 +51,34 @@ var renderOne = function(character, renderArea) {
                 }
             }
         }
+
+        if (areaRender === "#selected-character") {
+            renderOne(charObj, areaRender);
+        }
+
+        if (areaRender === "#available-to-attack-section") {
+            for (var i = 0; i < charObj.length; i++) {
+                renderOne(charObj[i], areaRender);
+            }
+        }
     }
 
     renderCharacters(characters, "#character-section");
+
+    $(document).on("click", ".character", function() {
+        var name = $(this).attr("data-name");
+        if (!currCharacterSelected) {
+            currCharacterSelected = characters[name];
+            for (var key in characters) {
+                if (key !== name) {
+                    combatants.push(characters[key]);
+                }
+            }
+
+            $("#character-section").hide();
+
+            renderCharacters(currCharacterSelected, "#selected-character");
+            renderCharacters(combatants, "#available-to-attack-section");
+        }
+    })
 });
